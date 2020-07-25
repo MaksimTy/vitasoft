@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Strings sorter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div>
+    <p>
+        <a href="/">На главную</a>
+    </p>
+</div>
+
+<h4>Task 1: Сортировщик строк.</h4>
+
+<form method="post" action="/strings">
+    <label for="lines">Введите строки для сортировки </label>
+    <p><textarea name="inputs" cols="100" rows="10">{{inputs}}</textarea></p>
+    <button type="submit">Сортировать</button>
+</form>
+<br/>
+<div>
+    <label>Результат :</label>
+    {{#isexist}}
+        <div>[</div>
+        <div style="margin-left: 20px">
+            {{#jsonarray}}
+                <p>"{{.}}",</p>
+            {{/jsonarray}}
+        </div>
+        <div>]</div>
+    {{/isexist}}
+</div>
+</body>
+</html>
