@@ -19,8 +19,12 @@ public class StringSorterController {
             "Солнце садится за горы лесистые.\n" +
             "Рог золотой выплывает луны.";
 
-    @Autowired
     private StringSorterService service;
+
+    @Autowired
+    public void setService(StringSorterService service) {
+        this.service = service;
+    }
 
     @GetMapping("/sort")
     public ModelAndView inputStringList(
@@ -35,5 +39,4 @@ public class StringSorterController {
     public List<String> getSortedStrings(@ModelAttribute("inputs") String inputs) {
         return service.getSortedStrings(inputs.split("\n"));
     }
-
 }

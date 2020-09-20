@@ -10,7 +10,7 @@ import java.util.Objects;
 @Component
 public class Months {
 
-    private final Map<Integer, String> months = new HashMap<>() {{
+    private final Map<Integer, String> months = new HashMap<>(12) {{
         put(1, "январь");
         put(2, "февраль");
         put(3, "март");
@@ -28,8 +28,16 @@ public class Months {
     public Months() {
     }
 
-    public Map<Integer, String> getMonths() {
+    private Map<Integer, String> getMonths() {
         return months;
+    }
+
+    public boolean containsMonthId(Integer id){
+        return months.containsKey(id);
+    }
+
+    public String getMonthById(Integer id){
+        return months.get(id);
     }
 
     @Override

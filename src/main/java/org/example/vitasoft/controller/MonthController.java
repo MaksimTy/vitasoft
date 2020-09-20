@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MonthController {
 
-    private final MonthService service;
+    private MonthService service;
 
     @Autowired
-    public MonthController(MonthService service) {
+    public void setService(MonthService service) {
         this.service = service;
     }
 

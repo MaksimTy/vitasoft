@@ -9,18 +9,22 @@ public class MonthService {
 
     private final String INCORRECT_OUTPUT = "INCORRECT INPUT DATA";
 
-    @Autowired
     private Months months;
 
+    @Autowired
+    public void setMonths(Months months) {
+        this.months = months;
+    }
+
     private String getMonthName(Integer id) {
-        return months.getMonths().get(id);
+        return months.getMonthById(id);
     }
 
     public String getOutput(String monthsId) {
         Integer id;
         try {
             id = Integer.parseInt(monthsId);
-            if (!months.getMonths().containsKey(id))
+            if (!months.containsMonthId(id))
                 throw new NumberFormatException();
         } catch (NumberFormatException e) {
             return this.INCORRECT_OUTPUT;
