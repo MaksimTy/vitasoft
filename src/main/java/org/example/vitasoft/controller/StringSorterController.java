@@ -14,11 +14,6 @@ import java.util.List;
 @Controller
 public class StringSorterController {
 
-    private static String TEST = "Тихо струится река серебристая,\n" +
-            "В царстве вечернем зеленой весны.\n" +
-            "Солнце садится за горы лесистые.\n" +
-            "Рог золотой выплывает луны.";
-
     private StringSorterService service;
 
     @Autowired
@@ -30,6 +25,10 @@ public class StringSorterController {
     public ModelAndView inputStringList(
     ) {
         ModelAndView modelAndView = new ModelAndView("sort");
+        String TEST = "Тихо струится река серебристая,\n" +
+                "В царстве вечернем зеленой весны.\n" +
+                "Солнце садится за горы лесистые.\n" +
+                "Рог золотой выплывает луны.";
         modelAndView.addObject("inputs", TEST);
         return modelAndView;
     }

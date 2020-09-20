@@ -79,5 +79,5 @@ http://host:port/sort
 
 Вызов сервиса:
 ```
- http://host:port/month/?id=7
+ http://host:port/month?id=7
 ```
